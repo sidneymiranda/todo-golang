@@ -3,15 +3,20 @@ package main
 import (
 	"log"
 	"net/http"
-
-	"eddy.com/todo/data"
+	"os"
+	// "eddy.com/todo/data"
 	"eddy.com/todo/route"
 )
 
 func main() {
+	var PORT = ":9090"
 
-	data.InitDatabase()
+	if envPort := os.Getenv("PORT"); envPort != ""{
+		PORT = ":" + envPort
+	}
 
-	log.Print("Server on")
-	http.ListenAndServe(":9000", route.RegisterRoute())
+	// data.InitDatabase()
+
+	log.Print("Server on", PORT)
+	http.ListenAndServe(PORT, route.RegisterRoute())
 }
