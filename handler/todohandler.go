@@ -12,7 +12,7 @@ import (
 )
 
 func Health(responseWriter http.ResponseWriter, request *http.Request) {
-	fmt.Fprint(responseWriter, "Server OK")
+	fmt.Fprint(responseWriter, "Server OK - VacationLabs 2021-2 - Colocando sua solução na nuvem com CI/CD")
 }
 
 func Insert(responseWriter http.ResponseWriter, request *http.Request) {
